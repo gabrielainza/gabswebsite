@@ -78,7 +78,7 @@ def casa(request):
     return render(request, template, context)
 
 # Descargar CV
-def descargar_cv():
+def descargar_cv(request):
     # Obtén la ruta completa al archivo PDF
     file_path = os.path.join(settings.BASE_DIR,'/Users/macbook/Desktop/gabswebsite/project/static/media/archivos_pdf/GA_CV.ENG.pdf')
 
