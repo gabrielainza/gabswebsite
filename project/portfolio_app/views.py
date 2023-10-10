@@ -78,13 +78,15 @@ def casa(request):
     return render(request, template, context)
 
 # Descargar CV
-def download_pdf(request):
-filename = 'GA_CV.ENG.pdf'
-content = FileWrapper(filename)
-response = HttpResponse(content, content_type='application/pdf')
-response['Content-Length'] = os.path.getsize(filename)
-response['Content-Disposition'] = 'attachment; filename=%s' % 'GA_CV.ENG.pdf'
-return response
+def descargar_cv(request):
+    # Obtén la ruta completa al archivo PDF
+    file_path = os.path.join(settings.STATIC_ROOT,'project''static''media''archivos_pdf''GA_CV.ENG.pdf')
+
+    if os.path.exists(file_path):
+        with open(file_path, 'rb') as pdf_file:
+            response = HttpResponse(pdf_file.read(), content_type='application/pdf')
+            response['Content-Disposition'] = 'attachment; filename="download_cv.pdf"'
+            return response
 
     # Si el archivo no existe, puedes manejarlo como desees, por ejemplo, mostrar un mensaje de error.
     return HttpResponse("Hola, aun no logro compilar esta funcion... pero igual regalame un whatsapp y te lo mando ;).", status=404)
