@@ -5,7 +5,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.conf import settings
 import os
-
+from wsgiref.util import FileWrapper
 
 # Cargar modelo guardado
 filename = 'static/classification_svc_sklearn_1_2_2.pickle'
@@ -80,7 +80,7 @@ def casa(request):
 # Descargar CV
 def descargar_cv(request):
     # Obtén la ruta completa al archivo PDF
-    file_path = os.path.join(settings.STATIC_ROOT,'media','archivos_pdf' 'GA_CV.ENG.pdf')
+    file_path = os.path.join(settings.STATIC_ROOT,'project''static''media''archivos_pdf''GA_CV.ENG.pdf')
 
     if os.path.exists(file_path):
         with open(file_path, 'rb') as pdf_file:
@@ -89,6 +89,6 @@ def descargar_cv(request):
             return response
 
     # Si el archivo no existe, puedes manejarlo como desees, por ejemplo, mostrar un mensaje de error.
-    return HttpResponse("Hola, aun no logro compilar esta funcion... pero igual regalame un whastapp y te mando mi cv por whastapp ;).", status=404)
+    return HttpResponse("Hola, aun no logro compilar esta funcion... pero igual regalame un whatsapp y te lo mando ;).", status=404)
 
 
