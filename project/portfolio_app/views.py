@@ -89,6 +89,6 @@ def descargar_cv(request):
             return response
 
     # Si el archivo no existe, puedes manejarlo como desees, por ejemplo, mostrar un mensaje de error.
-    return HttpResponse("El archivo no se encuentra disponible.", status=404)
+    return HttpResponse("Hola, aun no logro compilar esta funcion... pero igual regalame un whastapp y te mando mi cv por whastapp ;).", status=404)
 
 
