@@ -8,4 +8,5 @@ urlpatterns = [
     path('iris/', views.iris, name='iris'),
     path('casa/', views.casa, name='casa'),
     path('descargar_cv/', views.descargar_cv, name='descargar_cv'),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
