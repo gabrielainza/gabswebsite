@@ -1,13 +1,9 @@
 from django.shortcuts import render
 import pickle
 import numpy as np
-from django.http import HttpResponse
-from django.shortcuts import render
-from django.conf import settings
 import os
 
-from django.urls import path, include
-from django.conf.urls.static import static
+
 
 # Cargar modelo guardado
 filename = 'static/classification_svc_sklearn_1_2_2.pickle'

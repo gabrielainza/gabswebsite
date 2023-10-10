@@ -7,4 +7,3 @@ urlpatterns = [
     path('casa/', views.casa, name='casa'),
     
 ]
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
