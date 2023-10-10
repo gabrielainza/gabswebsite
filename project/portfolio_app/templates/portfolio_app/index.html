@@ -1,0 +1,442 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS / JS Externos -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
+ 
+
+    <!-- CSS / JS Internos -->
+    <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.ico' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/script.js' %}"></script>
+
+    <!-- Título de la página -->
+    <title>Gabriel Ainza</title>
+</head>
+
+<body>  
+    <!-- Contenido de página -->  
+    <div class="container-fluid">
+        
+        <!-- Imagen del encabezado -->
+        <div class="row mb-1" >
+            <div class="col-md-12 my-3" >
+                <img src="{% static 'img/Banner.png' %}" 
+                    style="width: 100%; height: 170px; object-fit: cover;" >
+            </div>
+        </div>
+
+        <!-- Título del encabezado-->
+        <div class="row">
+            <div class="col-12 my-4">
+                <h1 class="text-center">Gabriel Ainza</h1>
+            </div>
+        </div>        
+
+        <!-- Contenido -->
+        <div class="container">
+
+            <!-- Títulos de pestañas -->
+            <nav>
+                <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+
+                    <!-- Título de pestaña 1: HOME -->
+                    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">
+                        <h4>HOME</h4>
+                    </button>
+
+                    <!-- Título de pestaña 2: PORTAFOLIO -->
+                    <button class="nav-link" id="nav-portfolio-tab" data-bs-toggle="tab" data-bs-target="#nav-portfolio" type="button" role="tab" aria-controls="nav-portfolio" aria-selected="false">
+                        <h4>PORTFOLIO</h4>
+                    </button>
+
+                    <!-- Título de pestaña 3: CV -->
+                    <button class="nav-link" id="nav-cv-tab" data-bs-toggle="tab" data-bs-target="#nav-cv" type="button" role="tab" aria-controls="nav-cv" aria-selected="false">
+                        <h4>CV</h4>
+                    </button>
+
+                    <!-- Título de pestaña 4: CONTACTO -->
+                    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">
+                        <h4>CONTACT</h4>
+                    </button>
+
+                </div>
+            
+
+            <!-- Contenido de las pestañas -->
+            <di class="tab-content mt-5" id="nav-tabContent">
+
+                <!-- Contenido Tab HOME -->
+                <div class="tab-pane fade show active justified" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <h4>Biography</h4>  
+                    <p> As a finance graduate and a technology entrepreneur enthusiast with strong automotive expertise and financial management experience, my holistic approach seamlessly blends financial insight with analysis, data and business skills, with over 8 years in the automotive and tech industry, I have successfully founded and managed two businesses that have delivered significant impact through innovative financing strategies.
+                    
+                                </p>
+                    <br>
+                    <h4>Areas of Interest</h4>
+                    <p>Fintech, market strategies, entrepreneurship, innovation, coding, and constant growth of knowledge. These diverse interests and programming expertise have equipped me with a skill set for making a positive impact in various industries, providing me with exciting opportunities for professional growth.</p>
+                    
+                    <div class="">
+                        <ul class="mb-0">
+                            <li class="text-italic">Programming Languages </li>
+                            <li class="text-italic">Technology</li>
+                            <li class="text-italic">Entrepreneurship and Business Intelligence</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Contenido Tab PORTAFOLIO -->
+                <div class="tab-pane fade" id="nav-portfolio" role="tabpanel" aria-labelledby="nav-portfolio-tab">
+                    <section class="">
+
+                        <!-- Contenido PROYECTOS -->
+                        <div class="container">
+
+                            <!-- Nueva fila -->
+                            <div class="row">
+
+                                <!-- Columna izquierda -->
+                                <!-- PROYECTO 1 -->
+                                <div class="col-lg-4 mt-3 d-flex align-items-stretch">
+                                    <div class="card h-100">
+
+                                        <!-- Imagen -->
+                                        <img src="{% static 'img/irisnueva.png' %}" class="card-img-top" style="width: 100%; height: 120px; object-fit: cover;">
+                                        
+                                        <!-- Contenido -->
+                                        <div class="card-body d-flex flex-column">
+                                            <h4 class="card-title">PROJECT IRIS</h4>
+                                            <h6 class="card-subtitle mb-2 text-muted">Iris Flower Classifier Model</h6>
+                                            <p class="card-text mb-4">Determine if your iris flower is virginica, versicolor, or setosa.</p>
+                                            <a href="{% url 'iris' %}" class="card-link"><button class="btn btn-info w-100">Show me the project</button></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Columna central -->
+                                <!-- PROYECTO 2 -->
+                                <div class="col-lg-4 mt-3 px-3 d-flex align-items-stretch">
+                                    <div class="card h-100">
+
+                                        <!-- Imagen -->
+                                        <img src="{% static 'img/hm.png' %}" class="card-img-top" style="width: 100%; height: 120px; object-fit: cover;">
+                                        
+                                        <!-- Contenido -->
+                                        <div class="card-body d-flex flex-column">
+                                            <h4 class="card-title">House Market Price Project</h4>
+                                            <h6 class="card-subtitle mb-2 text-muted">Estimate House Price Model</h6>
+                                            <p class="card-text mb-4">Click 'show me the project' and Discover the value of your home!</p>
+                                            <a href="#" class="card-link">
+                                                <a href="{% url 'casa' %}" class="card-link"><button class="btn btn-info w-100">Show me the project</button></a>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Columna derecha -->
+                                <!-- PROYECTO 3 -->
+                                <div class="col-lg-4 mt-3 px-3 d-flex align-items-stretch">
+                                    <div class="card h-100">
+
+                                        <!-- Imagen -->
+                                        <img src="{% static 'img/diabetes.png' %}" class="card-img-top" style="width: 100%; height: 120px; object-fit: cover;">
+                                        
+                                        <!-- Contenido -->
+                                        <div class="card-body d-flex flex-column">
+                                            <h4 class="card-title">PROYECTO DIABETES</h4>
+                                            <h6 class="card-subtitle mb-2 text-muted">Modelo para estimar diabetes</h6>
+                                            <p class="card-text mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                            <a href="#" class="card-link">
+                                                <button class="btn btn-info w-100" onclick="sweetAlertMessage('Apologies, this project is still under development.', 'try other ones!', 'info')">Show me the project</button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Contenido Tab CV -->
+                <div class="tab-pane fade" id="nav-cv" role="tabpanel" aria-labelledby="nav-cv-tab">
+                    <div class="accordion" id="accordionPanelsStayOpenExample">
+                        
+                        <!-- Sección PERFIL -->
+                        <div class="accordion-item">
+                            
+                            <!-- Título -->
+                            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                                PROFILE
+                                </button>
+                            </h2>
+
+                            <!-- Contenido -->
+                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                                <div class="accordion-body">
+                                    I am a dedicated and accomplished finance professional with a strong educational background and a passion for data-driven decision-making. With a Bachelor's Degree in Finance from Universidad Del Valle de Mexico and various certifications, including Google Data Analytics From Google and Business Analytics from Johns Hopkins University, I possess a solid foundation in financial management and analysis.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sección EDUCACIÓN -->
+                        <div class="accordion-item">
+
+                            <!-- Título -->
+                            <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                                EDUCATION
+                                </button>
+                            </h2>
+
+                            <!-- Contenido -->
+                            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                                <div class="accordion-body">
+                                    <div class="row">
+                                        <div class="col-1 text-center">
+                                            
+                                        </div>
+                                        <div class="col-11">
+                                            <p><span class=""><strong>BUSINESS ANALYTICS AND DATA SCIENCE</strong></span> | JOHNS HOPKINS UNIVERSITY</p>
+                                            <P>SPECIALIZATION: DATA ANALYSIS AND PYTHON. </P>
+                                            <p>During the course, I acquired a variety of skills in Business Analytics and Data Science, I learned how to use tools like Microsoft Excel, Tableau, Python, and R to analyze financial data and perform predictive analysis, creating charts and visualizations has become an important part of my ability to identify revenue and expense trends, helping me make informed financial management and resource allocation decisions. In addition, I can apply machine learning algorithms to develop a efficient predictive model. </p>
+                                            <hr>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-1 text-center">
+                                            
+                                        </div>
+                                        <div class="col-11">
+                                            <p><span class=""><strong>FINANCIAL TECHNOLOGY INNOVATIONS</strong></span> | UNIVERSITY OF MICHIGAN</p>
+                                            <P>SPECIALIZATION: FINANCE AND FINTECH . </P>
+                                            <p>I learned about exciting developments where finance meets technology, explored how blockchain secures transactions and how artificial intelligence is changing the way we make financial decisions.</p>
+                                            <hr>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-1 text-center">
+                                            
+                                        </div>
+                                        <div class="col-11">
+                                            <p><span class=""><strong>DATA ANALYSIS</strong></span> | GOOGLE</p>
+                                            <P>SPECIALIZATION: PREPARE, PROCESS, ANALYZE, AND SHARE DATA. </P>
+                                            <p>Through the Google Data Analytics Professional Certificate program, I completed a comprehensive curriculum of eight courses developed by Google. These courses have given me hands-on experience with practice-based assessments, I have mastered various tools and platforms such as spreadsheets, SQL, Tableau and R. This program allows me to efficiently prepare, process, analyze and communicate data, making it possible for me to take wise and impactful action. </p>
+                                            <hr>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-1 text-center">
+                                            
+                                        </div>
+                                        <div class="col-11">
+                                            <p><span class=""><strong>PERSONAL FINANCE</strong></span> | UNIVERSIDAD NACIONAL AUTONOMA DE MEXICO</p>
+                                            <P>SPECIALIZATION: BUSINESS AND PERSONAL BUDGETS. </P>
+                                            <p>I gained knowledge of financial management, including personal and corporate aspects. I have gained experience in budgeting, investment strategy, risk assessment and financial planning. </p>
+                                            <hr>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-1 text-center">
+                                            
+                                        </div>
+                                        <div class="col-11">
+                                            <p><span class=""><strong>BACHELOR'S DEGREE IN FINANCE</strong></span> | UNIVERSIDAD AUTÓNOMA DEL VALLE DE MEXICO</p>
+                                            <P>SPECIALIZATION: CAPITAL AND CASH FLOW MANAGEMENT. </P>
+                                            <p>Solid knowledge of project management, budget planning, capital management tools and accounting. </p>  
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sección EXPERIENCIA LABORAL  -->
+                        <div class="accordion-item">
+
+                            <!-- Título -->
+                            <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                                WORK EXPERIENCE
+                                </button>
+                            </h2>
+
+                            <!-- Contenido -->
+                            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                                <div class="accordion-body">
+                                    <div class="row">
+                                        <div class="col-1 text-center">
+                                            2021-2023
+                                        </div>
+                                        <div class="col-11">
+                                            <p><span class=""><strong>FINTECH CONSULTANT</strong></span> | UCOMBI </p>
+                                            <P>Department: Data Analysis, Research and Development </P>
+                                            <p>With over 8+ years of experience in the auto credit industry, I contribute by identifying trends and opportunities for effective market penetration. </p>
+                                            
+                                            <div class="">
+                                                <ul class="mb-0">
+                                                    <li class="text-italic">Analyze data and patterns to uncover emerging opportunities.</li>
+                                                    <li class="text-italic">Contribute creative ideas based on my experience.</li>
+                                                    <li class="text-italic">Detailed explanation of the characteristics and development of the automotive industry.</li>
+                                                </ul>
+                                            </div>
+                                            <hr>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-1 text-center">
+                                            2017-2023
+                                        </div>
+                                        <div class="col-11">
+                                            <p><span class=""><strong>OPERATIONS MANAGER</strong></span> | TOP CAR </p>
+                                            <P>Department: Operations. </P>
+                                            <p>I realize an OM is focused on the human aspect, understanding my team, actively listening to their needs, and effectively conveying our strategies and company goals, I ensure that they don't feel overwhelmed by work and strive to create an atmosphere where they can enjoy the process. This approach emphasizes a people centered culture, where team satisfaction, engagement, and well being are prioritized</p>
+                                            
+                                            <div class="">
+                                                <ul class="mb-0">
+                                                    <li class="text-italic">Feedback and Support</li>
+                                                    <li class="text-italic">Clear Communication with the Team</li>
+                                                    <li class="text-italic">Innovation and Input</li>
+                                                </ul>
+                                            </div>
+                                            <hr>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-1 text-center">
+                                            2020-2021
+                                        </div>
+                                        <div class="col-11">
+                                            <p><span class=""><strong>CONSULTANT AND BUSINESS ANALYST</strong></span> | AINMO FINANCIERA - STARTUP.</p>
+                                            <P>Department: Business Development. </P>
+                                            <p>I played a crucial role in driving the company's growth and opportunities, especially in the challenging context of a startup. Additionally, the pandemic enabled us to seize numerous economic opportunities that arose through online platforms.</p>
+                                            
+                                            <div class="">
+                                                <ul class="mb-0">
+                                                    <li class="text-italic">Analysis and Problem Solving</li>
+                                                    <li class="text-italic">Requirement Elicitation and Solution Design</li>
+                                                    <li class="text-italic">Communication and Change Management</li>
+                                                </ul>
+                                            </div>
+                                            <hr>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-1 text-center">
+                                            2015-2017
+                                        </div>
+                                        <div class="col-11">
+                                            <p><span class=""><strong>SALES MANAGER</strong></span> | TOP CAR</p>
+                                            <P>Department: Sales. </P>
+                                            <p>Leads and supervises the sales team, sets sales goals, develops strategies to increase sales, and ensures desired outcomes are achieved.</p>
+                                            
+                                            <div class="">
+                                                <ul class="mb-0">
+                                                    <li class="text-italic">Team Leadership and Management</li>
+                                                    <li class="text-italic">Sales Strategy Development</li>
+                                                    <li class="text-italic">Performance Analysis and Reporting</li>
+                                                </ul>
+                                            </div>
+                                            <hr>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-1 text-center">
+                                            2014-2015
+                                        </div>
+                                        <div class="col-11">
+                                            <p><span class=""><strong>SALES AGENT</strong></span> | TOP CAR </p>
+                                            <P>Department: Sales. </P>
+                                            <p>Provide detailed information about vehicles, advice customers on their needs and options, assist them with loans for vehicle purchases and coordinates test drives.</p>
+                                            
+                                            <div class="">
+                                                <ul class="mb-0">
+                                                    <li class="text-italic">Customer Interaction and Relationship Building</li>
+                                                    <li class="text-italic">Product Presentation and Demonstration</li>
+                                                    <li class="text-italic">Closing Sales and Achieving Targets</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Sección HOBBIES -->
+                        <div class="accordion-item">
+                            
+                            <!-- Título -->
+                            <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+                                HOBBIES
+                                </button>
+                            </h2>
+
+                            <!-- Contenido -->
+                            <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
+                                <div class="accordion-body">
+                                    Personal health and personal well-being is an integral part of my life, I find that engaging in crossfit, running, and walks with my beloved doggy 'Guerita' helps me stay active, beyond my pursuit of a healthy and technologically current lifestyle, I enjoy every moment of my weekends. I take immense pleasure in sharing delightful culinary experiences with my wife, as we explore the rich diversity of gastronomy, particularly during our cozy Sunday lunches, and last but not least, one of my cherished hobbies is to continuously study and learn, both through courses and from real-life interactions with people, I firmly believe this practice keeps me vibrant and motivated. Gaining insights from individuals whom I deeply admire provides fresh perspectives to my ideas and life goals, allowing me to broaden my horizons and enhance my endeavors.
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+
+                <!-- Seccion de Tab CONTACT -->
+                
+                <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                    <div class="col text-center">
+                        <h4>
+                            E-mail
+                        </h4>
+                        <p><a class="text-info" style="font-size: 1.3rem;" href="mailto:gabrielainzamontano@gmail.com">gabrielainzamontano@gmail.com</a></p>
+                        <br>
+                        <h4>
+                            WhatsApp
+                        </h4>
+                        <p>
+                            <a class="text-info" style="font-size: 1.3rem;" target="_blank" href="https://wa.me/15202035720/">
+                                USA +1 (520) 203 5720 
+                                <span class="icon-stack text-info">
+                                    <i class="bi-whatsapp"></i>
+                                </span>
+                            </a> 
+                        </p>
+                        <br>
+                        <h4>
+                                     Download CV
+                        </h4>
+                        <p>
+                            <a href="{% url 'descargar_cv' %}" class="btn btn-primary">Descargar CV
+                                
+                            </a>  
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+    
+<script>
+    function sweetAlertMessage(title, text, icon){
+        Swal.fire({
+            title: title,
+            text: text,
+            icon: icon,
+            confirmButtonColor: '#0dcaf0',
+    })
+}
+</script>
+
+</html>
