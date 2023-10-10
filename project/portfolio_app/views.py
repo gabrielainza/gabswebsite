@@ -5,7 +5,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.conf import settings
 import os
-from wsgiref.util import FileWrapper
+
 from django.urls import path, include
 from django.conf.urls.static import static
 
@@ -82,7 +82,7 @@ def casa(request):
 # Descargar CV
 def descargar_cv(request):
     # Obtén la ruta completa al archivo PDF
-    file_path = os.path.join(settings.BASE_DIR,'gabswebsite','project','static','media','archivos_pdf','GA_CV.ENG.pdf')
+    file_path = os.path.join(settings.BASE_DIR,,'project','static','media','archivos_pdf','GA_CV.ENG.pdf')
 
     if os.path.exists(file_path):
         with open(file_path, 'rb') as pdf_file:
